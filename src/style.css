@@ -61,7 +61,6 @@ p {
 .img-container {
     display: flex;
     justify-content: center;
-    background-color: var(--neon-green);
 }
 
 .img-container > div {

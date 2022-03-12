@@ -1,7 +1,7 @@
 
 /** older version 
  * Javascript older version, Use ajax to get data
- * from server.
+ * from server and callbacks.
  * 
 */
 
@@ -10,7 +10,7 @@
  * 
  * @param {*} url 
  * @param {*} callback
- * 
+ *  Ajax:
  * readyState has five diferent states.
  *  0: request no initialized.
  *  1: server connect established
@@ -41,6 +41,30 @@ const ajaxAdvice = (url, callback ) => {
 }
 
 
+/***
+ * Another version using promise
+ */
 
+const promiseAdvice = ( url ) => {
+    return new Promise( (resolve, reject ) => {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange =  (event) => {
+            if( xhttp.readyState == 4 ) {
+                (xhttp.status == 200)
+                ? resolve(JSON.parse(xhttp.responseText))
+                : reject( new Error("Something wrong"));
+            }
+        }
+        xhttp.open('GET', url, true);
+        xhttp.send();
+    });
+}
 
+export {promiseAdvice}
 export { ajaxAdvice }
+
+
+
+
+
+
