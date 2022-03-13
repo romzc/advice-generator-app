@@ -23,7 +23,7 @@ Users should be able to:
 - See random advices.
 ### Screenshot
 
-![](./screenshot.jpg)
+![desktop version](./screenshot.png)
 
 ### Links
 
