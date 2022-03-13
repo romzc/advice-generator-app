@@ -85,6 +85,10 @@ p {
 
 @media(min-width: 750px) {
 
+    body {
+        transform: scale(1);
+    }
+
     main {
         max-width: 27.75rem;
     }
